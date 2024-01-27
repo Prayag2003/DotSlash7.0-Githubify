@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Understanding App</title>
+</head>
+<body>
+    <h1>GitHub Repository Code Understanding</h1>
+    <form id="githubForm">
+        <label for="githubUrl">Enter GitHub URL:</label>
+        <input type="text" id="githubUrl" name="githubUrl" required>
+        <button type="submit">Analyze Repository</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('githubForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            let githubUrl = document.getElementById('githubUrl').value;
+
+            fetch('/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({ 'github_url': githubUrl }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = data.result;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
