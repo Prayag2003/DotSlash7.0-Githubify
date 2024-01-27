@@ -1,0 +1,27 @@
+# .gitignore for FastAPI project with MongoDB
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+
+# MongoDB
+*.db
+*.log
+*.pid
+
+# Environment Files
+.env
+*.env
+.env.local
+.env.*.local
+.env.override
+
+# FastAPI Configuration
+__pycache__/
+pyproject.toml
