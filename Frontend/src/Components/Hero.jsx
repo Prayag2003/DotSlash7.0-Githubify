@@ -1,14 +1,41 @@
 import React, { useState } from "react";
 
-const [textData, setTextData] = useState(
-  "https://github.com/Prayag2003/tweet-tube-backend"
-);
+const Hero = () => {
+  const [githubUrl, setGithubUrl] = useState("");
 
-function Hero() {
   const handleHero = () => {
-    setTextData(textData);
-    window.location.href = "/explore";
+    // Sending a POST request to the Flask server
+    fetch("http://127.0.0.1:8000/process_repository", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      // credentials: 'include',
+      body: JSON.stringify({ github_url: githubUrl }),
+      redirect: "follow",
+    })
+      .then((response) => {
+        if (response.status === 202) {
+          window.location.href = "http://localhost:5173/explore";
+        } else {
+          return response.json();
+        }
+      })
+      .then((data) => {
+        if (data) {
+          console.log(data);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
+
+  const handleInputChange = (e) => {
+    setGithubUrl(e.target.value);
+  };
+
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
@@ -24,7 +51,7 @@ function Hero() {
               Githubify
             </span>
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-2xl">
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             Understanding Codebase made simpler
           </p>
         </div>
@@ -32,10 +59,11 @@ function Hero() {
           <div className="relative flex-grow w-full">
             <input
               type="text"
-              id="full-name"
-              name="full-name"
-              placeholder="https://github.com/Prayag2003/tweet-tube-backend"
-              className="w-full  bg-opacity-20 rounded-2xl border border-gray-600 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-white opacity-0.3 text-base outline-none py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              id="github-url"
+              name="github-url"
+              value={githubUrl}
+              onChange={handleInputChange}
+              className="w-full bg-opacity-50 rounded-2xl border border-gray-600 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-white text-base outline-none py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
 
@@ -49,6 +77,6 @@ function Hero() {
       </div>
     </section>
   );
-}
+};
 
 export default Hero;

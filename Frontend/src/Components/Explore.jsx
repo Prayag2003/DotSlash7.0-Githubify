@@ -5,6 +5,14 @@ const Explore = () => {
     window.location.href = "/chatwithbot";
   };
 
+  const handleChats = () => {
+    window.location.href = "http://localhost:5174/";
+  };
+
+  const handleVideoChat = () => {
+    window.location.href = "http://localhost:3002";
+  };
+
   const gradientStyle = {
     background: "-webkit-linear-gradient(45deg, #ff5e5e, #845ec2)",
     WebkitBackgroundClip: "text",
@@ -29,10 +37,10 @@ const Explore = () => {
             />
           </h1>
           <p
-            class="lg:w-2/3 mx-auto leading-relaxed text-4xl"
+            class="lg:w-2/3 mx-auto leading-relaxed  text-4xl"
             style={gradientStyle2}
           >
-            Hey 👋 What do you want to explore ?
+            Hey What do you want to explore ?
           </p>
         </div>
         <div class="grid grid-cols-2 gap-0 -m-5 pl-32 ">
@@ -50,7 +58,7 @@ const Explore = () => {
           </div>
           <div class="p-2 lg:w-2/3 md:w-1/2 w-full cursor-pointer">
             <div class="h-full flex items-center border-gray-200 border-2 p-4 rounded-2xl shadow-lg hover:shadow-none">
-              <div class="flex-grow" onClick={handleChatWithBot}>
+              <div class="flex-grow" onClick={handleChats}>
                 <h2
                   class="text-gray-900 text-3xl title-font font-extralight text-center"
                   style={gradientStyle}
@@ -62,7 +70,7 @@ const Explore = () => {
           </div>
           <div class="p-2 lg:w-2/3 md:w-1/2 w-full cursor-pointer">
             <div class="h-full flex items-center border-gray-200 border-2 p-4 rounded-2xl shadow-lg hover:shadow-none">
-              <div class="flex-grow" onClick={handleChatWithBot}>
+              <div class="flex-grow" onClick={handleVideoChat}>
                 <h2
                   class="text-gray-900 text-3xl title-font font-extralight text-center"
                   style={gradientStyle}
@@ -79,7 +87,7 @@ const Explore = () => {
                   class="text-gray-900 text-3xl title-font font-extralight text-center"
                   style={gradientStyle}
                 >
-                  I don't know
+                  Contact Us
                 </h2>
               </div>
             </div>
