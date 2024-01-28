@@ -11,6 +11,9 @@ Feel free to explore the Eraser workspace [Here 👨‍💻](https://app.eraser.
 - The bot uses Langchain API to understand the codebase, vectorize it, and then uses OpenAI API to generate responses to the user's queries.
 - The bot also has a chat with fellow contributors and a video call feature.
 
+# Preview 
+![Main Page](./public/image2.png)
+
 ## Features 🌟
 
 ### Home Page
