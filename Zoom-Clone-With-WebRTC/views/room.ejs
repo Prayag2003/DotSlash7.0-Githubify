@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    const ROOM_ID = "<%= roomId %>"
+  </script>
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="script.js" defer></script>
+  <title>Video Chat</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0; /* Set a background color */
+    }
+
+    #video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px; /* Add some gap between video elements */
+      padding: 16px; /* Add padding to the grid container */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+    
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px; /* Add rounded corners to video elements */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+      /* padding: 20px ; */
+    }
+  </style>
+</head>
+<body>
+  <div id="video-grid"></div>
+</body>
+</html>
