@@ -51,8 +51,8 @@ const Hero = () => {
               Githubify
             </span>
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Understanding Codebase made simpler
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-3xl">
+            Understanding codebase made simpler
           </p>
         </div>
         <div className="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
