@@ -29,7 +29,7 @@ GITHUBIFY is a tool designed to help developers quickly understand complex codeb
 
 ## High Level System Design
 
-![High Level System Design](Assets/HLD.png)
+![High Level System Design](image_assets/HLD.png)
 
 ---
 ---
@@ -38,40 +38,40 @@ GITHUBIFY is a tool designed to help developers quickly understand complex codeb
 
 ### Home Page
 
-![Main Page](./Assets/homepage.png)
+![Main Page](./image_assets/homepage.png)
 
 ### Explore Section
 
-![Explore Section](./Assets/explore_section.jpg)
+![Explore Section](./image_assets/explore_section.jpg)
 
 ### Cloning Repo & Processing
 
 - Utilizes [LangChain API](https://python.langchain.com/) for codebase understanding and vectorization.
 - Integrates [OpenAI API](https://platform.openai.com/docs/api-reference) for generating responses.
 
-![Cloning and Processing](./Assets/server.jpg)
+![Cloning and Processing](./image_assets/server.jpg)
 
 ## Sample Query
-![Sample output](./Assets/query.png)
+![Sample output](./image_assets/query.png)
 
 ### Advanced Chat Engine
 
 - Chat with the bot to clarify codebase concepts.
 - Reduces onboarding time and increases productivity.
 
-![Advanced Chat Engine](./Assets/chat.jpg)
+![Advanced Chat Engine](./image_assets/chat.jpg)
 
 ### MultiUser Real-Time Chat
 
 - Collaborate with fellow contributors in real time.
 
-![MultiUser Real-Time Chat](./Assets/group_chat.jpg)
+![MultiUser Real-Time Chat](./image_assets/group_chat.jpg)
 
 ### Video Call
 
 - WebRTC-based video calls using [PeerJS](https://peerjs.com/).
 
-![Video Call](./Assets/video.jpg)
+![Video Call](./image_assets/video.jpg)
 
 
 ## Team
